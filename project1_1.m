@@ -1,4 +1,4 @@
-% Project1_1
+% MoCS Project 1.1
 % Jonas Melander
 N = 50;
 p = 0.7;
