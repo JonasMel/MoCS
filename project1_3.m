@@ -1,6 +1,6 @@
 % MoCS Project 1.3
 % Jonas Melander
-N = 500;
+N = 50;
 p = 0.5;
 X_0 = rand;
 T = 1000;
