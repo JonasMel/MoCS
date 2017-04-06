@@ -1,10 +1,10 @@
 % MoCS Project 1.3
 % Jonas Melander
-N = 1000;
+N = 50;
 p = 0.5;
 X_0 = rand;
 T = 1000;
-A = 2000;
+A = 1000;
 M = zeros(A,T);
 q = [0:0.01:1];
 y = [0:100];

@@ -11,6 +11,4 @@ for i = 1 : A
 end
 eq_distr = zeros(A,T);
 eq_distr =(M(:, :)./N)*100;
-% t = [1:T];
-% plot(t, eq_distr);
 hist(eq_distr(:, end), 100);
