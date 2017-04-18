@@ -1,4 +1,5 @@
 %MCS project 3.1
+% Jonas Melander
 close all
 n = 500;
 b = [5, 10, 20, 30, 40];

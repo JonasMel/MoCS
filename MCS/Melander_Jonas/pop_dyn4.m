@@ -1,6 +1,6 @@
 function [ A ] = pop_dyn4( n, b, d )
 %Population dynamics, project 3.1
-T = 30;
+T = 15;
 A = zeros(T,n);
 a_old = n;
 tmp = [-1 1];
@@ -21,7 +21,7 @@ for t = 1:T
                 elseif r < 1
                     r = n + r;
                 end
-                A(t, r) =  A(t, r + 1;
+                A(t, r) =  A(t, r) + 1;
              end
           end
         end
