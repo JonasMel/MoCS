@@ -2,14 +2,14 @@
 %%
 %2.1 SPP model
 close all, clear
-p = 0.9;
-q = 0.0;
+p = 0.3;
+q = 0.3;
 N = 50;
-eta = 0.01;
+eta = 0.1;
 L = 20;
-R = 0.5;
-delta = 0.2; 
-T = 1000;
+R = 2;
+delta = 0.5; 
+T = 100;
 
 P0 = zeros(3,N);
 for i = 1:N;
@@ -21,6 +21,5 @@ end
 [x,y] = sppm(p,q,N,P0,eta,L,R,T,delta);
 
 for i = 1:T
-    plot(x(i,:), y(i,:), '^')
-    pause(0.025)
+    plot(x(i,:)
 end

@@ -8,6 +8,7 @@ theta = zeros(T,N);
 x(1,:) = P0(1,:);
 y(1,:) = P0(2,:);
 theta(1,:) = P0(3,:);
+p_id = zeros(1,N);
 for t = 1:T-1
     eps = interv(round(rand)+1)*rand*eta/2;
     for i = 1:N
@@ -25,12 +26,16 @@ for t = 1:T-1
                     
                 end
             end
-            tmp = p_id(round(rand*(cntr-1))+1);
-            if  prob < p
-                theta(t+1, i) =  atan2((y(t,i) - y(t,tmp)), ...
-                    x(t,i) - x(t,tmp)) + eps;
+            if cntr == 0
+                theta(t+1,i) = theta(t,i) + eps;
             else
-                theta(t+1,i) = theta(t,tmp) + eps;
+                tmp = p_id(round(rand*(cntr-1))+1);
+                if  prob < p
+                    theta(t+1, i) =  atan2((y(t,i) - y(t,tmp)), ...
+                        x(t,i) - x(t,tmp)) + eps;
+                else
+                    theta(t+1,i) = theta(t,tmp) + eps;
+                end
             end
         else
             theta(t+1,i) = theta(t,i) + eps;
