@@ -1,4 +1,4 @@
-function [x,y] = sppm(p, q, N, P0, eta, L, R, T, d)
+function [x,y, theta] = sppm(p, q, N, P0, eta, L, R, T, d)
 
 interv = [-1 1];
 
