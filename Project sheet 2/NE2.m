@@ -5,7 +5,7 @@ I = zeros(1,T);
 
 %Setting up linked network
 for i = 1:N
-    for j = 1:N
+    for j = i:N
         if  i ~= j && links(i , j) == 0
             
             if rand < ld

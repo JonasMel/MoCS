@@ -6,10 +6,9 @@ close all, clear
 N = 5000;
 ld = 0.0016;
 
-linked = NE1(N, ld);
-avg = mean(linked);
+[linked, L, avg_deg] = NE1(N, ld);
 
-hist(linked, 100)
+histogram(L, 100)
 
 %%
 %1.2 Undirected social network, infection
@@ -48,9 +47,19 @@ plot(t, I(1,:), t, I(2,:), t, I(3,:), t, I(4,:), t, I(5,:), t, I(6,:), ...
 % 1.4 Social network with preferential attachment
 close all, clear
 
-d = NE4(4,5000);
-histogram(d);
+N = 5000;
+m = 4;
 
+q = zeros(10,N-m);
+for j = 1:10
+    d = NE4(m,N);
+for i = 1:N-m
+    q(j,i) = sum(d > m +i);
+end
+end
+
+loglog(mean(q(1:end,:)), '.');
+hold on;
 %%
 % 1.6
 close all, clear
