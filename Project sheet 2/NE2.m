@@ -48,5 +48,5 @@ for t = 1:T
     end
     
     I(t) = sum(L(2,:));
-    
+    disp(t/T);
 end

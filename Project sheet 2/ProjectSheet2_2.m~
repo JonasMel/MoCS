@@ -38,10 +38,11 @@ I = zeros(10, T);
 for i = 1:10
     I(i,:) = NE2(p(i), r, T, N, ld);
 end
-
+figure;
 plot(t, I(1,:), t, I(2,:), t, I(3,:), t, I(4,:), t, I(5,:), t, I(6,:), ...
     t, I(7,:), t, I(8,:), t, I(9,:), t, I(10,:))
-    
+figure;
+plot(r./p, I(:,1000));
 
 %%
 % 1.4 Social network with preferential attachment
@@ -57,7 +58,7 @@ for i = 1:N-m
     q(j,i) = sum(d > m +i);
 end
 end
-
+avg = 
 loglog(mean(q(1:end,:)), '.');
 hold on;
 %%

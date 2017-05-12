@@ -110,7 +110,7 @@ for i = 1:N
 end
 
 %Evolve
-for t = 1:T
+for t = 1:200
     disp(t)
     %Generate average fitness
     for i = 1:N
@@ -127,7 +127,8 @@ for t = 1:T
 end
 
 [best_perf, index] = max(avg_perf);
-[perf, final_room] = OneChromPerf(room, chroms(index, :))
+[perf, final_room] = OneChromPerf(room, chroms(index, :));
+
 
 
     

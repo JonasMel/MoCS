@@ -42,10 +42,13 @@ for i = 1:(length(N)/2)
     new_chroms(2*i, 1:cross_pt) = chroms(chrom_B, 1:cross_pt);
     new_chroms(2*i, cross_pt+1:end) = chroms(chrom_A, cross_pt+1:end);
     
-    %Mutatation?
+    
+end
+
+%Mutatation?
+for i = 1:N
     if rand < pm
-        new_chroms(2*i-1, floor(rand*L)+1) = floor(rand*4) + 1;
-        new_chroms(2*i, floor(rand*L)+1) = floor(rand*4) +1;
+        new_chroms(i, floor(rand*L)+1) = floor(rand*4) + 1;
     end
 end
    
