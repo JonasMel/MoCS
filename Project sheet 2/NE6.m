@@ -1,4 +1,4 @@
-function [ I, degree ] = NE6( m, T, N)
+function [ I, degree ] = NE6(p ,m, T, N)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 links = zeros(N,N);
@@ -11,7 +11,7 @@ degree(1, 1:4) = 1;
 cntr = 4;
 prob = zeros(N,1);
 r = 0.03;
-p = 0.01;
+
 for t = 2:N-3
     sumdeg = sum(degree(1, 1:end));
     

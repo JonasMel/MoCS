@@ -64,9 +64,20 @@ hold on;
 %%
 % 1.6
 close all, clear
-[I, deg] = NE6(4, 1000, 5000);
+%[I, deg] = NE6(0.1, 4, 1000, 5000);
 t = 1:1000;
-plot(t,I)
+p = 0.001:0.001:0.01;
+T = 1000;
+N = 5000;
+m = 4;
+I = zeros(10, T);
+
+for i = 1:10
+    [I(i,:), deg] = NE6(p(i), m, T, N);
+end
+figure;
+plot(t,I(1,:), t,I(2,:),t,I(3,:),t,I(4,:),t,I(5,:),t,I(6,:),t,I(7,:),...
+    t,I(8,:),t,I(9,:),t,I(10,:));
 
 %%
 %2.1 SPP model
